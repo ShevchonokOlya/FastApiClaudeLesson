@@ -28,3 +28,5 @@ Open http://127.0.0.1:fastapi dev main.py8000/docs to see the API documentation.
 | PUT    | /books/{book_id} | Replace the book             |
 | PATCH  | /books/{book_id} | Change part of a book        |
 | DELETE | /books/{book_id} | Delete a book                |
+
+### Author: Olga
