@@ -12,7 +12,7 @@ A small REST API for a book library, built with FastAPI.
     pip install -r requirements.txt
     fastapi dev main.py
 
-Open http://127.0.0.1:fastapi dev main.py8000/docs to see the API documentation.
+Open http://127.0.0.1/docs to see the API documentation.
 
 ## How to test
     pytest
