@@ -82,6 +82,6 @@ def test_put_no_author_returns_422():
 
 
 def test_get_author_rowling_returns_200() -> None:
-    r = client.get("/books/", params={"author": "Rowling"}, timeout=5)
+    r = client.get("/books", params={"author": "Rowling"}, timeout=5)
     assert r.status_code == 200
     assert len(r.json()) == 1
