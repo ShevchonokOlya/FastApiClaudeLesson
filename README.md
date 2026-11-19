@@ -24,10 +24,12 @@ Open http://127.0.0.1/docs to see the API documentation.
 | GET    | /books/{book_id} | Get one book                 |
 | GET    | /                | Root                         |
 | POST   | /books           | Create a book                |
-| PUT    | /books           | Create or replace a book (id in body)   |
 | PUT    | /books/{book_id} | Replace the book             |
 | PATCH  | /books/{book_id} | Change part of a book        |
 | DELETE | /books/{book_id} | Delete a book                |
+
+## Storage
+Data is stored in a SQLite database (`books.db`). Tests use a separate database (`test_books.db`).
 
 ## Tests
 11 tests, all passing

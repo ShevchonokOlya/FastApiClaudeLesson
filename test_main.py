@@ -1,4 +1,10 @@
 from fastapi.testclient import TestClient
+import os
+
+os.environ["BOOKS_DB"] = "test_books.db"       # тесты пишут в свою базу
+if os.path.exists("test_books.db"):             # и каждый раз начинают с чистой
+    os.remove("test_books.db")
+
 from main import app  # ваше приложение из main.py
 
 client = TestClient(app)  # «клиент» без сервера
