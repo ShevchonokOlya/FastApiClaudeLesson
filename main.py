@@ -117,13 +117,10 @@ def root():
 def list_books(author: str | None = None, limit: int = 10) -> list:
 
     with Database() as conn:
-        if author:
-            books = conn.execute("SELECT * FROM books WHERE author = ? LIMIT ?",
-                                 (author,limit)).fetchall()
+        if author is None:
+            books = conn.execute("SELECT * FROM books LIMIT ?", (limit,)).fetchall()
         else:
-            books = conn.execute(
-                "SELECT * FROM books LIMIT ?",(limit, )
-            ).fetchall()
+            books = conn.execute("SELECT * FROM books WHERE author = ? LIMIT ?", (author, limit)).fetchall()
 
         return [dict(book) for book in books]
 
