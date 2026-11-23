@@ -14,10 +14,6 @@ class BookUpdate(BaseModel):
     author: str | None = None
 
 
-class BookPUT(BaseModel):
-    id: int
-    title: str
-    author: str
 
 
 DB_PATH = os.environ.get("BOOKS_DB", "books.db")
@@ -89,19 +85,6 @@ def update_book(book_id: int, changes: BookUpdate):
         return book
 
 
-#
-# @app.put("/books")
-# def put_book(new_book: BookPUT):
-#     income_book = new_book.model_dump(exclude_unset=True)
-#     book_id = income_book['id']
-#     title = income_book['title']
-#     author = income_book['author']
-#     for book in BOOKS:
-#         if book["id"] == book_id:
-#             book.update({"title": title, "author": author})
-#             return book
-#     BOOKS.append({"id": book_id, "title": title, "author": author})
-#     return income_book
 
 
 @app.put("/books/{book_id}")
