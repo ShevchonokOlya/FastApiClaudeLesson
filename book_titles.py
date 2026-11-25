@@ -2,7 +2,7 @@ from main import Database
 
 
 def book_titles(conn):
-    res = conn.execute("SELECT title FROM books").fetchall()
+    res = conn.execute("SELECT title FROM books")
     for row in res:
         yield row["title"]
 
